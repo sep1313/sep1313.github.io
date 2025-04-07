@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapling Energy Partners | Energy Solutions for Business</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fcfcfc;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+            padding: 24px 0;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #165a1c;
+            letter-spacing: -0.5px;
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(160deg, #165a1c 0%, #093d0f 100%);
+            padding: 120px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 760px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 36px;
+            line-height: 1.5;
+            font-weight: 400;
+            max-width: 670px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .assessment-text {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #165a1c;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 34px;
+            border-radius: 4px;
+            letter-spacing: -0.2px;
+        }
+        
+        /* About section */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 70px;
+            color: #165a1c;
+            position: relative;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #165a1c;
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .about-card {
+            background-color: #ffffff;
+            border-radius: 6px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+            position: relative;
+            z-index: 1;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .about-card h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #165a1c;
+            letter-spacing: -0.3px;
+            font-weight: 700;
+        }
+        
+        .about-card p {
+            margin-bottom: 0;
+            color: #555;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        
+        /* Services section */
+        .services {
+            background: linear-gradient(to bottom, #f8faf8 0%, #f2f6f2 100%);
+            position: relative;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card {
+            background-color: #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .service-icon {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(120deg, #f8faf8 0%, #f2f6f2 100%);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .icon-symbol {
+            font-size: 34px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-content {
+            padding: 24px;
+        }
+        
+        .service-content h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #165a1c;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+        
+        .service-content p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Contact section */
+        .contact {
+            background-color: #ffffff;
+            position: relative;
+        }
+        
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-method {
+            margin-bottom: 28px;
+            padding: 30px;
+            background: #f8faf8;
+            border-radius: 6px;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .contact-method h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #165a1c;
+            font-weight: 600;
+        }
+        
+        .contact-method p {
+            color: #444;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .contact-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #165a1c;
+        }
+        
+        /* Footer styles */
+        footer {
+            background: linear-gradient(135deg, #165a1c 0%, #1a4d1e 100%);
+            color: #fff;
+            padding: 50px 0 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+        }
+        
+        .footer-nav {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-nav p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 15px;
+            margin: 0 10px;
+            display: inline-block;
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .disclaimer {
+            max-width: 800px;
+            margin: 14px auto 0;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.6;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .about-card {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Sapling Energy Partners</div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content container">
+            <h1>Profit Maximization.</h1>
+            <p>Tap Into Energy Incentives; Elevate Your Savings.</p>
+            <div class="assessment-text">Schedule Free Assessment</div>
+        </div>
+    </section>
+    
+    <!-- About Us Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-card">
+                    <h3>Our Story</h3>
+                    <p>Sapling Energy Partners was born from a profound understanding and extensive experience in the energy savings and solar industry. Our founding members, with combined experience totaling 18 years, embarked on a journey in 2016 with a residential-focused energy savings company. Through dedication and relentless effort, our team successfully conducted over 6,000 energy assessments and facilitated the installation of more than 6 megawatts of solar, with many installations paired with advanced battery storage. However, as the landscape of the energy industry evolved and unique needs emerged, we realized the immense potential in catering specifically to small to medium-sized businesses, towns and non-profits. Thus, Sapling Energy Partners came into existence.</p>
+                </div>
+                
+                <div class="about-card">
+                    <h3>Who We Are</h3>
+                    <p>Sapling Energy Partners stands as a beacon of transparency, expertise, and genuine client service in the energy industry. Our reputation, reflected in a robust 5-star standing with our sister company, speaks volumes of our commitment to every client we serve. With an arsenal of positive testimonials from satisfied clients, we've proved time and again that our focus is on client education and empowerment. Two of our founding members, Philip and Colin, have become synonymous with the Sapling Energy brand, with accolades for their forthright consultations, deep insights into energy usage, and their knack for making even the most complex energy systems understandable.</p>
+                </div>
+                
+                <div class="about-card">
+                    <h3>Our Vision</h3>
+                    <p>We're on the cusp of a new era in energy. With record numbers of state and federal incentives and tax credits, along with over $1 billion allocated for grants, the opportunities for businesses, towns and non-profits to revolutionize their energy consumption are boundless. At Sapling Energy Partners, we envision a world where clean power is abundent, reliable and cheap. Energy doesn't just power machines; it drives innovation, output, and potential. Our mission is to help every client hit the reset button on their energy bills so they do more of what they do best.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <h2 class="section-title">What We Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <div class="icon-symbol">☀️</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>PV Solar</h3>
+                        <p>Harness the sun's power for sustainable energy</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <div class="icon-symbol">⚡</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Demand Charge Reduction</h3>
+                        <p>Optimize usage, lower your peak demand costs</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <div class="icon-symbol">🔋</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Energy Storage</h3>
+                        <p>Store excess energy for when you need it most</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <div class="icon-symbol">📊</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Net Energy Metering Analysis</h3>
+                        <p>Maximize savings with tailored energy export insights</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <div class="icon-symbol">💰</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Incentive Mapping</h3>
+                        <p>Navigate the landscape of available energy tax credits and incentives</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <div class="icon-symbol">📝</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Grant Applications</h3>
+                        <p>Unlock free dollars for your green transition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-method">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p>support@saplingenergypartners.com</p>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p>(716) 201-0363</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-nav">
+                <p>About Us</p>
+                <p>What We Offer</p>
+                <p>Contact Us</p>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Sapling Energy Partners, LLC</p>
+                <p class="disclaimer">*Savings is never guaranteed due to a variety of factors, including but not limited to: changing regulatory landscapes, power usage, local utility rates, weather patterns, and other impacts to consumption and production.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
